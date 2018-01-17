@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  constructor(
+    public router: Router,
+  ){
+    sessionStorage['http'] = 'http://192.168.0.149:8085';
+    if (localStorage['ID'] == '' || localStorage['ID'] == null || localStorage['ID'] == undefined){
+      this.router.navigate(['/']);
+    }
+  }
 }

@@ -19,9 +19,20 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "./assets/css/bootstrap.css",
+        "./assets/css/Site.css",
+        "./assets/css/bootstrap-datetimepicker.min.css",
         "styles.scss"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.js",
+        "./assets/js/modernizr-2.6.2.js",
+        "./assets/js/MoneyToBig.js",
+        "./assets/js/respond.js",
+        "./assets/js/bootstrap-datetimepicker.min.js",
+        "./assets/js/bootstrap-datetimepicker.fr.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

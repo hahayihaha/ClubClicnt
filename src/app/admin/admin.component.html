@@ -1,0 +1,31 @@
+<app-header></app-header>
+<div class="body-content">
+  <h2>管理员</h2>
+  <p>
+    Create New
+  </p>
+  <table class="table">
+    <tr>
+      <th>
+        用户名
+      </th>
+      <th>
+        登记日期
+      </th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let admin of adminArr; let i = index">
+      <td>
+        {{admin['UserID']}}
+      </td>
+      <td>
+        {{getTimes(admin['Times'])}}
+      </td>
+      <td class="operation">
+        <a routerLink="/add">添加</a> | <a [routerLink]="['/modify', admin['ID']]">修改密码</a> | <a (click)="delete(admin['ID'], i)">删除</a>
+      </td>
+    </tr>
+  </table>
+  <hr />
+</div>
+<app-footer></app-footer>
