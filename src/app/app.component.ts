@@ -11,8 +11,5 @@ export class AppComponent {
     public router: Router,
   ){
     sessionStorage['http'] = 'http://192.168.0.149:8085';
-    if (localStorage['ID'] == '' || localStorage['ID'] == null || localStorage['ID'] == undefined){
-      this.router.navigate(['/']);
-    }
   }
 }

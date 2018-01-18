@@ -20,8 +20,8 @@ export class ModifyComponent implements OnInit {
     public fb: FormBuilder
   ) {
     this.formModel = fb.group({
-      oldPass: ['', Validators.required],
-      newPass: ['', Validators.required]
+      oldpass: ['', Validators.required],
+      password: ['', Validators.required]
     })
   }
 
@@ -34,8 +34,10 @@ export class ModifyComponent implements OnInit {
     this.http.put(sessionStorage['http'] + '/Action/Admins/PutPass/' + this.ID, this.formModel.value).subscribe( response =>{
       if(response.json()){
         alert('修改成功');
+        this.router.navigate(['/admin']);
       }
     }, error => {
+      event.target.disabled = false;
       alert(error.json()['Message']);
     } )
   }

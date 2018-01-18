@@ -39,6 +39,7 @@ export class AddComponent implements OnInit {
         this.router.navigate(['/admin'])
       }
     }, error => {
+      event.target.disabled = false;
       alert(error.json()['Message'])
     } )
   }
